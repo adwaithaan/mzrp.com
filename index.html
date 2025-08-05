@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MZRP Fan Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #3d3d3d);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: #ff6600;
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #2a2a2a;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .btn {
+            background: #ff6600;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #ff3300;
+        }
+
+        footer {
+            background: #111;
+            padding: 10px;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        /* --- YouTuber Cards --- */
+        .youtubers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: #2a2a2a;
+            width: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card p {
+            padding: 10px;
+            font-size: 0.9em;
+            color: #ffcc66;
+        }
+
+        /* --- Unique Features --- */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .feature {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: left;
+        }
+
+        .feature h3 {
+            color: #ff9933;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 0.95em;
+        }
+
+        a {
+            color: #ffcc66;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff9933;
+        }
+
+        .bios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.bio-card {
+    background: #2a2a2a;
+    width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 10px;
+    transition: 0.3s;
+}
+
+.bio-card:hover {
+    transform: scale(1.05);
+}
+
+.bio-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.bio-card h3 {
+    color: #ffcc66;
+    margin: 10px 0 5px;
+}
+
+.bio-card p {
+    font-size: 0.9em;
+    margin: 5px 10px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.season {
+    background: #2a2a2a;
+    border-left: 5px solid #ff6600;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.season:hover {
+    background: #3d3d3d;
+}
+
+.season h3 {
+    margin: 0;
+    color: #ffcc66;
+}
+
+.season-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.season-details a {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background: #ff6600;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.season-details a:hover {
+    background: #ff3300;
+}
+
+    </style>
+</head>
+<body>
+
+  <header style="background-color: #FF9E3D;">
+    <img src="mzrp2.png" alt="MZRP Season 03" class="banner" style="width: 500px;"/>
+</header>
+
+
+    <!-- Introduction -->
+    <section>
+        <p>Welcome to the ultimate fan page for <strong>MZRP</strong>! 🎮 <br>
+        Dive into the world of Minecraft roleplay and troll adventures inspired by the creators of MZRP.
+        Watch epic moments, explore builds, and stay connected with the MZRP community.</p>
+    </section>
+
+    <section>
+    <h2>What is MZRP?</h2>
+    <div style="background:#2a2a2a; padding:20px; max-width:700px; margin:auto; border-radius:10px;">
+        <p>
+            <strong>MZRP</strong> is a troll-based Minecraft roleplay series created by a group of talented 
+            Malayalam YouTubers and gamers. Launched in <strong>2021</strong>, the series mixes 
+            <em>funny trolls, unexpected twists, and creative storytelling</em>, giving it a unique 
+            Kerala flavor loved by fans everywhere.
+        </p>
+    </div>
+</section>
+
+    <!-- What Makes It Unique -->
+    <section>
+        <h2>What Makes MZRP Unique?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>🌍 Immersive World</h3>
+                <p>Massive custom-built cities and maps that feel alive, built by creative minds of Kerala.</p>
+            </div>
+            <div class="feature">
+                <h3>🎭 Epic Roleplay</h3>
+                <p>Roleplay stories mixed with hilarious troll moments, keeping players hooked every episode.</p>
+            </div>
+            <div class="feature">
+                <h3>🎥 Talented Creators</h3>
+                <p>YouTubers bring characters to life with their unique style, humor, and storytelling.</p>
+            </div>
+            <div class="feature">
+                <h3>🔥 Community Vibes</h3>
+                <p>A server with its own Kerala twist — language, humor, and creativity blended together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Channels -->
+    <section>
+        <h2>YouTube Channels Featuring MZRP</h2>
+        <div class="youtubers">
+            <div class="card">
+                <a href="https://youtube.com/@runejerry?feature=shared"><img src="https://yt3.googleusercontent.com/K0MSkgB6xLZrx9nROQUPRiJk8vxDoPn9oNyY2DdLV8G4AYBqMuP4LbjpfHTEXZ1TDwV0z_RQ1A=s160-c-k-c0x00ffffff-no-rj" alt="RuneJerry"></a>
+                <p>RuneJerry (Swami/Jerry)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@zilven_exe?feature=shared"><img src="https://yt3.googleusercontent.com/TOWlm52UuWPBfvRMhDD5At6IWaYNyACmPhLQIZEeGu_hbsk3S4kSe3QCTKcMlD5rxZATXrVq_w=s160-c-k-c0x00ffffff-no-rj" alt="Zilven"></a>
+                <p>Zilven (Zilvin)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@zilsila?feature=shared"><img src="https://yt3.googleusercontent.com/Jqjpr1-VhaUovpUdzT8YCqCkpNRpHp_LrDkcxwu7TbLgFzQJDGFhMJDwiP8nSZEmghC4OGBtIw=s160-c-k-c0x00ffffff-no-rj" alt="Zilzila"></a>
+                <p>Zilzila (Zilu)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@gtplusyt?feature=shared"><img src="https://yt3.ggpht.com/YrG6jPDEYARAVyGiq5pmnVI5SqtbfmkrFbCfSsplH9gQOEuVgyArWW2glEFome6s-62V9sU_ZWM=s176-c-k-c0x00ffffff-no-rj-mo" alt="GT Plus"></a>
+                <p>GT Plus (GT)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@wondrouspandakdl?feature=shared"><img src="https://yt3.ggpht.com/y_NozmNBzRzUbqNN2XjjQUa02nJGn-xIRiSumo2jKbu6eQIoN3dGuPYVZwe3hjhaeTnHMLXW-A=s176-c-k-c0x00ffffff-no-rj-mo" alt="Wonderous Panda"></a>
+                <p>Wonderous Panda (GB 2.0)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@gamerboy20?feature=shared"><img src="https://yt3.ggpht.com/NhSXHDIWvHCv4EuErlteqAj32un97HLa4e7z3L6Lg3vjXtT_gcdoM8LlwBsMsCoejxtDzo73=s176-c-k-c0x00ffffff-no-rj-mo" alt="Gamer2.0"></a>
+                <p>Gamerboy2.0 (GB)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@malayalamtechieslive?feature=shared"><img src="https://yt3.ggpht.com/N_9gWTIJuP1uCDYX59fIw3OijHGyelMCnYchpNRhs6UBxiUencxyB7QoPLa-O4aVmiGD1fsg=s176-c-k-c0x00ffffff-no-rj-mo" alt="Malayalam Techies"></a>
+                <p>Malayalam Techies (Kannapi)</p>
+            </div>
+            <div class="card">
+               <a href="https://youtube.com/@random_gtv?feature=shared"><img src="https://yt3.ggpht.com/l5fiiCrnPvaVF1bOkDO4y2YfdkwdH946pCmRlHKKgjXnzaisQi86dS9-OFpXvJ3Bar2PfOSO4Q=s176-c-k-c0x00ffffff-no-rj-mo" alt="Randomized"></a>
+                <p>Randomized (Random)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@perfectgamingmachan?feature=shared"><img src="https://yt3.ggpht.com/5chRqRAcjs9frh9oXHUtyIx-GNwjGshR7sZDVRgt5HY6J_VHT-6SlQSosm7eZNK7bzm-NUVKvA=s176-c-k-c0x00ffffff-no-rj-mo" alt="Perfect Gaming Machan"></a>
+                <p>Perfect Gaming Machan (Tomz)</p>
+            </div>
+            <div class="card">
+                <a href="https://youtube.com/@lavendergirlyt?feature=shared"><img src="https://yt3.ggpht.com/o_Eb3aOlPxfTbN6EX0xd4eoih6-a9oKvWMNXWx1av-Wxd2DWPUArp9gpC9c6HN94BPxt_swveg=s176-c-k-c0x00ffffff-no-rj-mo" alt="Lavender Girl YT"></a>
+                <p>Lavender Girl YT (Lavuse)</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+    </section>
+
+    <section>
+    <h2>MZRP Seasons Timeline</h2>
+    <div class="timeline">
+        <div class="season" onclick="toggleSeason('s1')">
+            <h3>Season 1</h3>
+            <div id="s1" class="season-details">
+                <p>The beginning of MZRP – introduction and another builds and small trolls, started at <strong>2021-2022</strong></p>
+                <a href="#" target="_blank">Watch Playlist</a>
+            </div>
+        </div>
+
+        <div class="season" onclick="toggleSeason('s2')">
+            <h3>Season 2</h3>
+            <div id="s2" class="season-details">
+                <p>New builds, bigger trolls, and intense storylines and a suspense of ghost arises!, started at <strong>2022-2023</strong></p>
+                <a href="#" target="_blank">Watch Playlist</a>
+            </div>
+        </div>
+
+        <div class="season" onclick="toggleSeason('s3')">
+            <h3>Season 3 (Now Running!)</h3>
+            <div id="s3" class="season-details">
+                <p>The most explosive season yet – more chaos, more TNT, and next-level twist!, started at <strong>2025</strong></p>
+                <a href="#" target="_blank">Watch Playlist</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>MZRP Fan Quiz</h2>
+    <div id="quiz-box" style="background:#2a2a2a; padding:20px; max-width:600px; margin:auto; border-radius:10px; text-align:left;">
+        
+        <!-- Q1 -->
+        <p><strong>1) What is the full form of MZRP?</strong></p>
+        <input type="text" id="q1" placeholder="Type your answer..." 
+            style="padding:8px; width:80%; border:none; border-radius:5px;">
+        
+        <!-- Q2 -->
+        <p><strong>2) Who is playing the role of Swami?</strong></p>
+        <label><input type="radio" name="q2" value="a"> Kanappi (Malayalam Techies)</label><br>
+        <label><input type="radio" name="q2" value="b"> Gamerboy</label><br>
+        <label><input type="radio" name="q2" value="c"> Rune Jerry</label><br>
+        <label><input type="radio" name="q2" value="d"> Randomized</label>
+        
+        <!-- Q3 -->
+        <p><strong>3) Who made Season 1 and 2 stop, and was the reason for the ghost in S1 and S2?</strong></p>
+        <label><input type="radio" name="q3" value="a"> Gamerboy</label><br>
+        <label><input type="radio" name="q3" value="b"> Rune Jerry</label><br>
+        <label><input type="radio" name="q3" value="c"> Malayalam Techies (Kanappi)</label><br>
+        <label><input type="radio" name="q3" value="d"> Lavender Girl (Lavusse)</label>
+        
+        <!-- Q4 -->
+        <p><strong>4) MZRP server mainly focuses on what type of thing?</strong></p>
+        <label><input type="radio" name="q4" value="a"> Troll + Fun</label><br>
+        <label><input type="radio" name="q4" value="b"> Fun + Seriousness</label><br>
+        <label><input type="radio" name="q4" value="c"> Cruel + Dangerous</label><br>
+        <label><input type="radio" name="q4" value="d"> Troll + Thriller + Horror</label>
+        
+        <br>
+        <button class="btn" onclick="checkQuiz()">Submit</button>
+        <p id="quiz-result" style="margin-top:10px; font-weight:bold;"></p>
+    </div>
+</section>
+
+<section>
+    <h2>Need to Update or Correct Information?</h2>
+    <div style="background:#2a2a2a; padding:20px; max-width:700px; margin:auto; border-radius:10px;">
+        <p>
+            If you are a creator featured here or have important updates/corrections for this page, 
+            feel free to contact us at:
+        </p>
+        <p style="font-size:1.2em; color:#ffcc66;"><strong>Email:</strong> adwaithblk@gmail.com</p>
+        <p>
+            We’ll verify and update the information as soon as possible.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2 style="color: #000;">information⚠️</h2>
+    <div style="background:#2a2a2a; padding:20px; max-width:700px; margin:auto; border-radius:10px;">
+        <p>
+            All YouTubers photos,videos or links are directly took from <a href="youtube.com">youtube</a> and 
+            <strong>public YouTube channels of them!</strong>. 
+            These images are their official YouTube profile pictures, and the names are the same 
+            as they appear on their channels, logo is a madeup/seen in google only photo!
+        </p>
+        <p>
+            ⚠️NOTICE: This fan page does not claim ownership of their content – it’s purely for 
+            <em><U>entertainment and community appreciation</U></em>.
+        </p>
+    </div>
+</section>
+
+    <footer>Made with love by: MZRP FANZ💝 | Not an official server page...</footer>
+
+    <section style="background-color: #ff9933;"><img src="mzrp2.png" style="width: 200px;"/></section>
+
+
+    <script>
+        function showMessage() {
+            alert("Welcome to MZRP, bro! 🌍 Keep exploring!");
+        }
+
+        function loadPlayers() {
+            const players = ["HeroSteve", "TrollMaster", "BuilderPro", "EnderKnight"];
+            const list = document.getElementById("player-list");
+            list.innerHTML = "";
+            players.forEach(player => {
+                const li = document.createElement("li");
+                li.textContent = player;
+                list.appendChild(li);
+            });
+        }
+
+        window.onload = loadPlayers;
+
+        function toggleSeason(id) {
+    const section = document.getElementById(id);
+    section.style.display = section.style.display === "block" ? "none" : "block";
+}
+
+function checkQuiz() {
+    let score = 0;
+    const total = 4;
+    let feedback = "<h3>Quiz Feedback:</h3>";
+
+    // Question 1
+    const q1 = document.getElementById("q1").value.trim().toLowerCase();
+    if (q1 === "malayalam-techies zilzila randomized perfect-gaming-machan") {
+        score++;
+        feedback += "<p>Q1: Correct!</p>";
+    } else {
+        feedback += `<p>Q1: Wrong. Correct Answer: Minecraft Zilven Roleplay</p>`;
+    }
+
+    // Question 2
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    if (q2 && q2.value === "c") {
+        score++;
+        feedback += "<p>Q2: Correct!</p>";
+    } else {
+        feedback += `<p>Q2: Wrong. Correct Answer: Rune Jerry</p>`;
+    }
+
+    // Question 3
+    const q3 = document.querySelector('input[name="q3"]:checked');
+    if (q3 && q3.value === "d") {
+        score++;
+        feedback += "<p>Q3: Correct!</p>";
+    } else {
+        feedback += `<p>Q3: Wrong. Correct Answer: Lavender Girl (Lavusse)</p>`;
+    }
+
+    // Question 4
+    const q4 = document.querySelector('input[name="q4"]:checked');
+    if (q4 && q4.value === "d") {
+        score++;
+        feedback += "<p>Q4: Correct!</p>";
+    } else {
+        feedback += `<p>Q4: Wrong. Correct Answer: Troll + Thriller + Horror</p>`;
+    }
+
+    // Show Result + Feedback
+    const result = document.getElementById("quiz-result");
+    let summary = "";
+    if (score === total) {
+        summary = `🔥 Perfect! You scored ${score}/${total}. You’re a true MZRP Master!`;
+    } else if (score >= 2) {
+        summary = `⚡ Not bad! You scored ${score}/${total}. Keep watching to become a pro fan!`;
+    } else {
+        summary = `❌ You scored ${score}/${total}. Looks like you need to watch MZRP again!`;
+    }
+
+    result.innerHTML = summary + feedback;
+    result.style.color = "white";
+}
+
+    </script>
+
+</body>
+</html>
