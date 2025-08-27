@@ -1,504 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZRP Fan Page</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e1e1e, #3d3d3d);
-            color: white;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MZRP Fan Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e1e, #3d3d3d);
+      color: white;
+      text-align: center;
+    }
 
-        header {
-            background: #ff6600;
-            padding: 20px;
-            font-size: 2em;
-            font-weight: bold;
-        }
+    /* Header styling */
+    header {
+      background-color: #FF9E3D;
+      padding: 20px;
+      display: flex;
+      justify-content: center; /* centers the logo */
+      align-items: center;     /* vertically centers */
+      flex-wrap: wrap;         /* allows wrapping for very small screens */
+    }
 
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+    /* Logo image responsive */
+    header .banner {
+      width: 500px;    /* default for laptops */
+      max-width: 100%; /* prevents overflow on smaller screens */
+      height: auto;    /* maintains aspect ratio */
+    }
 
-        h2 {
-            color: #ff6600;
-            margin-bottom: 10px;
-        }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    h2 { color: #ff6600; margin-bottom: 10px; }
+    ul { list-style: none; padding: 0; }
+    ul li {
+      background: #2a2a2a;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
 
-        ul li {
-            background: #2a2a2a;
-            margin: 8px 0;
-            padding: 10px;
-            border-radius: 8px;
-        }
+    .btn {
+      background: #ff6600;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #ff3300; }
 
-        .btn {
-            background: #ff6600;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
+    footer {
+      background: #111;
+      padding: 10px;
+      margin-top: 30px;
+      font-size: 0.9em;
+    }
 
-        .btn:hover {
-            background: #ff3300;
-        }
+    /* Cards */
+    .youtubers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .card {
+      background: #2a2a2a;
+      width: 150px;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .card:hover { transform: scale(1.05); }
+    .card img { width: 100%; height: 150px; object-fit: cover; }
+    .card p { padding: 10px; font-size: 0.9em; color: #ffcc66; }
 
-        footer {
-            background: #111;
-            padding: 10px;
-            margin-top: 30px;
-            font-size: 0.9em;
-        }
+    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .feature {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: left;
+    }
+    .feature h3 { color: #ff9933; margin-bottom: 8px; }
+    .feature p { font-size: 0.95em; }
+    a { color: #ffcc66; text-decoration: none; }
+    a:hover { color: #ff9933; }
 
-        /* --- YouTuber Cards --- */
-        .youtubers {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .season {
+      background: #2a2a2a;
+      border-left: 5px solid #ff6600;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .season:hover { background: #3d3d3d; }
+    .season h3 { margin: 0; color: #ffcc66; }
+    .season-details { display: none; margin-top: 10px; }
+    .season-details a {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 8px 12px;
+      background: #ff6600;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .season-details a:hover { background: #ff3300; }
 
-        .card {
-            background: #2a2a2a;
-            width: 150px;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
+    ::selection { background: #ff6600; color: white; }
+    html { scroll-behavior: smooth; }
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+    nav {
+      background: #ff6600;
+      padding:10px;
+      position:sticky; 
+      top:0; 
+      z-index:1000;
+    }
+    nav a { margin: 0 10px; color: white; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
 
-        .card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
+    .location-info {
+      font-size: 14px;
+      color: #ddd;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .location-info a {
+      color: #ff6f61;
+      text-decoration: underline;
+    }
 
-        .card p {
-            padding: 10px;
-            font-size: 0.9em;
-            color: #ffcc66;
-        }
+    /* Big-page form styles */
+    .big-form {
+      background: linear-gradient(to right, #1e1e1e, #333);
+      color: #fff;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 50px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.7);
+      position: relative;
+    }
+    .big-form h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .big-form p { text-align: center; margin-bottom: 30px; font-size: 18px; }
+    .big-form label { font-size: 16px; margin-bottom: 5px; display: block; }
+    .big-form input,
+    .big-form textarea,
+    .big-form select {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      box-sizing: border-box;
+      background: #2a2a2a;
+      color: #fff;
+    }
+    .big-form input:focus,
+    .big-form textarea:focus,
+    .big-form select:focus {
+      outline: none;
+      box-shadow: 0 0 10px #ff6f61;
+    }
+    .big-form .btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background: #ff6f61;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .big-form .btn:hover { background: #ff3b2e; }
 
-        /* --- Unique Features --- */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+    /* Confirmation popup inside the form */
+    .confirmation-popup {
+      display: none;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #222;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    }
+    .confirmation-popup h3 { margin-bottom: 10px; color: #4caf50; }
+    .confirmation-popup p { margin-bottom: 20px; }
 
-        .feature {
-            background: #2a2a2a;
-            padding: 15px;
-            border-radius: 10px;
-            width: 250px;
-            text-align: left;
-        }
+    /* Forbidden word popup */
+    .forbidden-popup {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #ff4d4d;
+      color: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      z-index: 9999;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    .forbidden-popup button {
+      margin-top: 10px;
+      padding: 5px 15px;
+      background: #fff;
+      color: #ff4d4d;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .feature h3 {
-            color: #ff9933;
-            margin-bottom: 8px;
-        }
+    /* Disclaimer Section */
+    .disclaimer {
+      padding: 20px; 
+      background-color: #f8f8f8; 
+      border-radius: 10px; 
+      margin-top: 20px;
+      color: #555;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .disclaimer h2 { color: #333; font-size: 1.5em; }
 
-        .feature p {
-            font-size: 0.95em;
-        }
-
-        a {
-            color: #ffcc66;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #ff9933;
-        }
-
-        .bios {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.bio-card {
-    background: #2a2a2a;
-    width: 200px;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    padding-bottom: 10px;
-    transition: 0.3s;
-}
-
-.bio-card:hover {
-    transform: scale(1.05);
-}
-
-.bio-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.bio-card h3 {
-    color: #ffcc66;
-    margin: 10px 0 5px;
-}
-
-.bio-card p {
-    font-size: 0.9em;
-    margin: 5px 10px;
-}
-
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: left;
-}
-
-.season {
-    background: #2a2a2a;
-    border-left: 5px solid #ff6600;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.season:hover {
-    background: #3d3d3d;
-}
-
-.season h3 {
-    margin: 0;
-    color: #ffcc66;
-}
-
-.season-details {
-    display: none;
-    margin-top: 10px;
-}
-
-.season-details a {
-    display: inline-block;
-    margin-top: 5px;
-    padding: 8px 12px;
-    background: #ff6600;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.season-details a:hover {
-    background: #ff3300;
-}
-
-    </style>
+  </style>
 </head>
 <body>
 
-  <header style="background-color: #FF9E3D;">
-    <img src="mzrp2.png" alt="MZRP Season 03" class="banner" style="width: 500px;"/>
+<nav>
+  <a href="#about">What is MZRP?</a>
+  <a href="#unique">Features</a>
+  <a href="#youtubers">YouTubers</a>
+  <a href="#seasons">Seasons</a>
+  <a href="#quiz">Fan Quiz</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header>
+  <img src="mzrp2.png" alt="MZRP Season 03" class="banner"/>
 </header>
 
-
-    <!-- Introduction -->
-    <section>
-        <p>Welcome to the ultimate fan page for <strong>MZRP</strong>! 🎮 <br>
-        Dive into the world of Minecraft roleplay and troll adventures inspired by the creators of MZRP.
-        Watch epic moments, explore builds, and stay connected with the MZRP community.</p>
-    </section>
-
-    <section>
-    <h2>What is MZRP?</h2>
-    <div style="background:#2a2a2a; padding:20px; max-width:700px; margin:auto; border-radius:10px;">
-        <p>
-            <strong>MZRP</strong> is a troll-based Minecraft roleplay series created by a group of talented 
-            Malayalam YouTubers and gamers. Launched in <strong>2021</strong>, the series mixes 
-            <em>funny trolls, unexpected twists, and creative storytelling</em>, giving it a unique 
-            Kerala flavor loved by fans everywhere.
-        </p>
-    </div>
+<section id="about">
+  <p>Welcome to the ultimate fan page for <strong>MZRP</strong>! 🎮<br>
+  Dive into the world of Minecraft roleplay and troll adventures inspired by the creators of MZRP.</p>
 </section>
 
-    <!-- What Makes It Unique -->
-    <section>
-        <h2>What Makes MZRP Unique?</h2>
-        <div class="features">
-            <div class="feature">
-                <h3>🌍 Immersive World</h3>
-                <p>Massive custom-built cities and maps that feel alive, built by creative minds of Kerala.</p>
-            </div>
-            <div class="feature">
-                <h3>🎭 Epic Roleplay</h3>
-                <p>Roleplay stories mixed with hilarious troll moments, keeping players hooked every episode.</p>
-            </div>
-            <div class="feature">
-                <h3>🎥 Talented Creators</h3>
-                <p>YouTubers bring characters to life with their unique style, humor, and storytelling.</p>
-            </div>
-            <div class="feature">
-                <h3>🔥 Community Vibes</h3>
-                <p>A server with its own Kerala twist — language, humor, and creativity blended together.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- YouTube Channels -->
-    <section>
-        <h2>YouTube Channels Featuring MZRP</h2>
-        <div class="youtubers">
-            <div class="card">
-                <a href="https://youtube.com/@runejerry?feature=shared"><img src="https://yt3.googleusercontent.com/K0MSkgB6xLZrx9nROQUPRiJk8vxDoPn9oNyY2DdLV8G4AYBqMuP4LbjpfHTEXZ1TDwV0z_RQ1A=s160-c-k-c0x00ffffff-no-rj" alt="RuneJerry"></a>
-                <p>RuneJerry (Swami/Jerry)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@zilven_exe?feature=shared"><img src="https://yt3.googleusercontent.com/TOWlm52UuWPBfvRMhDD5At6IWaYNyACmPhLQIZEeGu_hbsk3S4kSe3QCTKcMlD5rxZATXrVq_w=s160-c-k-c0x00ffffff-no-rj" alt="Zilven"></a>
-                <p>Zilven (Zilvin)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@zilsila?feature=shared"><img src="https://yt3.googleusercontent.com/Jqjpr1-VhaUovpUdzT8YCqCkpNRpHp_LrDkcxwu7TbLgFzQJDGFhMJDwiP8nSZEmghC4OGBtIw=s160-c-k-c0x00ffffff-no-rj" alt="Zilzila"></a>
-                <p>Zilzila (Zilu)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@gtplusyt?feature=shared"><img src="https://yt3.ggpht.com/YrG6jPDEYARAVyGiq5pmnVI5SqtbfmkrFbCfSsplH9gQOEuVgyArWW2glEFome6s-62V9sU_ZWM=s176-c-k-c0x00ffffff-no-rj-mo" alt="GT Plus"></a>
-                <p>GT Plus (GT)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@wondrouspandakdl?feature=shared"><img src="https://yt3.ggpht.com/y_NozmNBzRzUbqNN2XjjQUa02nJGn-xIRiSumo2jKbu6eQIoN3dGuPYVZwe3hjhaeTnHMLXW-A=s176-c-k-c0x00ffffff-no-rj-mo" alt="Wonderous Panda"></a>
-                <p>Wonderous Panda (GB 2.0)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@gamerboy20?feature=shared"><img src="https://yt3.ggpht.com/NhSXHDIWvHCv4EuErlteqAj32un97HLa4e7z3L6Lg3vjXtT_gcdoM8LlwBsMsCoejxtDzo73=s176-c-k-c0x00ffffff-no-rj-mo" alt="Gamer2.0"></a>
-                <p>Gamerboy2.0 (GB)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@malayalamtechieslive?feature=shared"><img src="https://yt3.ggpht.com/N_9gWTIJuP1uCDYX59fIw3OijHGyelMCnYchpNRhs6UBxiUencxyB7QoPLa-O4aVmiGD1fsg=s176-c-k-c0x00ffffff-no-rj-mo" alt="Malayalam Techies"></a>
-                <p>Malayalam Techies (Kannapi)</p>
-            </div>
-            <div class="card">
-               <a href="https://youtube.com/@random_gtv?feature=shared"><img src="https://yt3.ggpht.com/l5fiiCrnPvaVF1bOkDO4y2YfdkwdH946pCmRlHKKgjXnzaisQi86dS9-OFpXvJ3Bar2PfOSO4Q=s176-c-k-c0x00ffffff-no-rj-mo" alt="Randomized"></a>
-                <p>Randomized (Random)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@perfectgamingmachan?feature=shared"><img src="https://yt3.ggpht.com/5chRqRAcjs9frh9oXHUtyIx-GNwjGshR7sZDVRgt5HY6J_VHT-6SlQSosm7eZNK7bzm-NUVKvA=s176-c-k-c0x00ffffff-no-rj-mo" alt="Perfect Gaming Machan"></a>
-                <p>Perfect Gaming Machan (Tomz)</p>
-            </div>
-            <div class="card">
-                <a href="https://youtube.com/@lavendergirlyt?feature=shared"><img src="https://yt3.ggpht.com/o_Eb3aOlPxfTbN6EX0xd4eoih6-a9oKvWMNXWx1av-Wxd2DWPUArp9gpC9c6HN94BPxt_swveg=s176-c-k-c0x00ffffff-no-rj-mo" alt="Lavender Girl YT"></a>
-                <p>Lavender Girl YT (Lavuse)</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-    </section>
-
-    <section>
-    <h2>MZRP Seasons Timeline</h2>
-    <div class="timeline">
-        <div class="season" onclick="toggleSeason('s1')">
-            <h3>Season 1</h3>
-            <div id="s1" class="season-details">
-                <p>The beginning of MZRP – introduction and another builds and small trolls, started at <strong>2021-2022</strong></p>
-                <a href="https://youtube.com/playlist?list=PLcN33Ej-1oz_GAMgnDKOJsQAmX1I-7PDv&feature=shared" target="_blank">Watch Playlist</a>
-            </div>
-        </div>
-
-        <div class="season" onclick="toggleSeason('s2')">
-            <h3>Season 2</h3>
-            <div id="s2" class="season-details">
-                <p>New builds, bigger trolls, and intense storylines and a suspense of ghost arises!, started at <strong>2022-2023</strong></p>
-                <a href="https://youtube.com/playlist?list=PLHp9_I4Gw8O-Q3jltV1mjt2cH7T9a9IR9&feature=shared" target="_blank">Watch Playlist</a>
-            </div>
-        </div>
-
-        <div class="season" onclick="toggleSeason('s3')">
-            <h3>Season 3 (Now Running!)</h3>
-            <div id="s3" class="season-details">
-                <p>The most explosive season yet – more chaos, more TNT, and next-level twist!, started at <strong>2025</strong></p>
-                <a href="https://youtube.com/playlist?list=PLlFWtUzUVvX-5I5fIoiCJgat2is4FE0gw&feature=shared" target="_blank">Watch Playlist</a>
-            </div>
-        </div>
-    </div>
-</section>
-<section>
-    <h2>MZRP Fan Quiz</h2>
-    <div id="quiz-box" style="background:#2a2a2a; padding:20px; max-width:600px; margin:auto; border-radius:10px; text-align:left;">
-        
-        <!-- Q1 -->
-        <p><strong>1) What is the full form of MZRP?</strong></p>
-        <input type="text" id="q1" placeholder="Type your answer..." 
-            style="padding:8px; width:80%; border:none; border-radius:5px;">
-        
-        <!-- Q2 -->
-        <p><strong>2) Who is playing the role of Swami?</strong></p>
-        <label><input type="radio" name="q2" value="a"> Kanappi (Malayalam Techies)</label><br>
-        <label><input type="radio" name="q2" value="b"> Gamerboy</label><br>
-        <label><input type="radio" name="q2" value="c"> Rune Jerry</label><br>
-        <label><input type="radio" name="q2" value="d"> Randomized</label>
-        
-        <!-- Q3 -->
-        <p><strong>3) Who made Season 1 and 2 stop, and was the reason for the ghost in S1 and S2?</strong></p>
-        <label><input type="radio" name="q3" value="a"> Gamerboy</label><br>
-        <label><input type="radio" name="q3" value="b"> Rune Jerry</label><br>
-        <label><input type="radio" name="q3" value="c"> Malayalam Techies (Kanappi)</label><br>
-        <label><input type="radio" name="q3" value="d"> Lavender Girl (Lavusse)</label>
-        
-        <!-- Q4 -->
-        <p><strong>4) MZRP server mainly focuses on what type of thing?</strong></p>
-        <label><input type="radio" name="q4" value="a"> Troll + Fun</label><br>
-        <label><input type="radio" name="q4" value="b"> Fun + Seriousness</label><br>
-        <label><input type="radio" name="q4" value="c"> Cruel + Dangerous</label><br>
-        <label><input type="radio" name="q4" value="d"> Troll + Thriller + Horror</label>
-        
-        <br>
-        <button class="btn" onclick="checkQuiz()">Submit</button>
-        <p id="quiz-result" style="margin-top:10px; font-weight:bold;"></p>
-    </div>
+<section id="unique">
+  <h2>What Makes MZRP Unique?</h2>
+  <div class="features">
+    <div class="feature"><h3>🌍 Immersive World</h3><p>Massive custom-built cities and maps built by Kerala creators.</p></div>
+    <div class="feature"><h3>🎭 Epic Roleplay</h3><p>Roleplay stories mixed with hilarious troll moments.</p></div>
+    <div class="feature"><h3>🎥 Talented Creators</h3><p>YouTubers bring characters to life with humor and storytelling.</p></div>
+    <div class="feature"><h3>🔥 Community Vibes</h3><p>A server with Kerala language, humor, and creativity.</p></div>
+  </div>
 </section>
 
-<section>
-    <h2>Need to Update or Correct Information?</h2>
-    <div style="background:#2a2a2a; padding:20px; max-width:700px; margin:auto; border-radius:10px;">
-        <p>
-            If you are a creator featured here or have important updates/corrections for this page, 
-            feel free to contact us at:
-        </p>
-        <p style="font-size:1.2em; color:#ffcc66;"><strong>Email:</strong> adwaithblk@gmail.com</p>
-        <p>
-            We’ll verify and update the information as soon as possible.
-        </p>
-    </div>
+<section id="youtubers">
+  <h2>YouTube Channels Featuring MZRP</h2>
+  <div class="youtubers">
+    <!-- cards go here -->
+  </div>
 </section>
 
-<section>
-    <h2 style="color: #000;">information⚠️</h2>
-    <div style="background:#2a2a2a; padding:20px; max-width:700px; margin:auto; border-radius:10px;">
-        <p>
-            All YouTubers photos,videos or links are directly took from <a href="youtube.com">youtube</a> and 
-            <strong>public YouTube channels of them!</strong>. 
-            These images are their official YouTube profile pictures, and the names are the same 
-            as they appear on their channels, logo is a madeup/seen in google only photo!
-        </p>
-        <p>
-            ⚠️NOTICE: This fan page does not claim ownership of their content – it’s purely for 
-            <em><U>entertainment and community appreciation</U></em>.
-        </p>
+<section id="seasons">
+  <h2>MZRP Seasons Timeline</h2>
+  <div class="timeline">
+    <div class="season" onclick="toggleSeason('s1')">
+      <h3>Season 1</h3>
+      <div id="s1" class="season-details"><p>Started 2021-2022</p></div>
     </div>
+    <div class="season" onclick="toggleSeason('s2')">
+      <h3>Season 2</h3>
+      <div id="s2" class="season-details"><p>Started 2022-2023</p></div>
+    </div>
+    <div class="season" onclick="toggleSeason('s3')">
+      <h3>Season 3 (Now Running!)</h3>
+      <div id="s3" class="season-details"><p>Started 2025</p></div>
+    </div>
+  </div>
 </section>
 
-    <footer>Made with love by: MZRP FANZ💝 | Not an official server page...</footer>
+<section id="edit-info" class="big-form">
+  <h2>Need to improve or correct any information?</h2>
+  <p>Help us improve and correct spelling mistakes, YouTubers name, image or link changing!</p>
 
-    <section style="background-color: #ff9933;"><img src="mzrp2.png" style="width: 200px;"/></section>
+  <form id="infoForm">
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Your name">
 
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Your email">
 
-    <script>
-        function showMessage() {
-            alert("Welcome to MZRP, bro! 🌍 Keep exploring!");
-        }
+    <label>Your Request:</label>
+    <textarea id="message" placeholder="Type your request"></textarea>
 
-        function loadPlayers() {
-            const players = ["HeroSteve", "TrollMaster", "BuilderPro", "EnderKnight"];
-            const list = document.getElementById("player-list");
-            list.innerHTML = "";
-            players.forEach(player => {
-                const li = document.createElement("li");
-                li.textContent = player;
-                list.appendChild(li);
-            });
-        }
+    <label>Select your district:</label>
+    <select id="place">
+      <option value="">-- Select district --</option>
+      <option value="ernakulam">Ernakulam (Kochi)</option>
+      <option value="thiruvananthapuram">Thiruvananthapuram (Trivandrum)</option>
+      <option value="palakkad">Palakkad</option>
+      <option value="kollam">Kollam</option>
+      <option value="kannur">Kannur</option>
+      <option value="kasaragod">Kasaragod</option>
+      <option value="wayanad">Wayanad (Munnar)</option>
+      <option value="idukki">Idukki</option>
+      <option value="pathanamthitta">Pathanamthitta</option>
+      <option value="kozhikode">Kozhikode (Calicut)</option>
+      <option value="alappuzha">Alappuzha</option>
+      <option value="kottayam">Kottayam</option>
+      <option value="malappuram">Malappuram</option>
+      <option value="thrissur">Thrissur</option>
+      <option value="ut">UT (Union Territories)</option>
+      <option value="other">Other state / city</option>
+    </select>
+    <p class="location-info">
+  ***Location OR place is requested only for best voting experience to improve or voting and improvement!  
+  IF YOU THINK WE ARE USING YOUR LOCATION FOR OTHER USE, PLEASE COMPLAIN TO:  
+  <a href="https://cybercrime.gov.in/" target="_blank">https://cybercrime.gov.in/offical</a>
+</p>
 
-        window.onload = loadPlayers;
+    <button type="submit" class="btn">Submit</button>
+  </form>
 
-        function toggleSeason(id) {
-    const section = document.getElementById(id);
-    section.style.display = section.style.display === "block" ? "none" : "block";
+  <!-- Confirmation popup -->
+  <div id="confirmation" class="confirmation-popup">
+    <h3>✅ Your request has been sent!</h3>
+    <p>We will check through it soon and make it work out!</p>
+    <button class="btn" onclick="closeConfirmation()">OK</button>
+  </div>
+
+  <!-- Forbidden word live popup -->
+  <div id="forbiddenPopup" class="forbidden-popup">
+    ⚠️ WARNING:
+    <p>your request has some kind of language or word that dosent follow: <br /><a href="#">our community guidelines, rules and regulations OR words that influence our employees to distract!</a></p>
+    <button onclick="closeForbiddenPopup()">OK</button>
+  </div>
+</section>
+
+<section class="disclaimer">
+  <h2>Disclaimer</h2>
+  <p>
+    All details, images, links, and photos on this page are sourced from public platforms such as YouTube and other publicly available services. This website is <strong>not an official website</strong> of any organization, company, or individual mentioned here.
+  </p>
+</section>
+
+<footer>Made with love by: MZRP FANZ💝 | Not an official server page...</footer>
+
+<script>
+function toggleSeason(id) {
+  const section = document.getElementById(id);
+  section.style.display = section.style.display === "block" ? "none" : "block";
 }
 
-function checkQuiz() {
-    let score = 0;
-    const total = 4;
-    let feedback = "<h3>Quiz Feedback:</h3>";
+// Forbidden words list
+const forbiddenWords = ["idiot", "stupid", "dumb", "hate", "shit", "wtf", "fuck", "porn", "sex", "f u c k", "p o r n", "s h i t", "d u m b", "h a t e", "s t u p i d", "i d i o t"];
+const messageInput = document.getElementById("message");
 
-    // Question 1
-    const q1 = document.getElementById("q1").value.trim().toLowerCase();
-    if (q1 === "malayalam-techies zilzila randomized perfect-gaming-machan , malayalamtechies zilzila randomized pgm") {
-        score++;
-        feedback += "<p>Q1: Correct!</p>";
-    } else {
-        feedback += `<p>Q1: Wrong. Correct Answer: malayalam-techies zilzila randomized perfect-gaming-machan</p>`;
+// Live check as user types
+messageInput.addEventListener("input", function() {
+  const text = messageInput.value.toLowerCase();
+  for (let word of forbiddenWords) {
+    if (text.includes(word)) {
+      showForbiddenPopup();
+      return; 
     }
+  }
+});
 
-    // Question 2
-    const q2 = document.querySelector('input[name="q2"]:checked');
-    if (q2 && q2.value === "c") {
-        score++;
-        feedback += "<p>Q2: Correct!</p>";
-    } else {
-        feedback += `<p>Q2: Wrong. Correct Answer: Rune Jerry</p>`;
-    }
-
-    // Question 3
-    const q3 = document.querySelector('input[name="q3"]:checked');
-    if (q3 && q3.value === "d") {
-        score++;
-        feedback += "<p>Q3: Correct!</p>";
-    } else {
-        feedback += `<p>Q3: Wrong. Correct Answer: Lavender Girl (Lavusse)</p>`;
-    }
-
-    // Question 4
-    const q4 = document.querySelector('input[name="q4"]:checked');
-    if (q4 && q4.value === "d") {
-        score++;
-        feedback += "<p>Q4: Correct!</p>";
-    } else {
-        feedback += `<p>Q4: Wrong. Correct Answer: Troll + Thriller + Horror</p>`;
-    }
-
-    // Show Result + Feedback
-    const result = document.getElementById("quiz-result");
-    let summary = "";
-    if (score === total) {
-        summary = `🔥 Perfect! You scored ${score}/${total}. You’re a true MZRP Master!`;
-    } else if (score >= 2) {
-        summary = `⚡ Not bad! You scored ${score}/${total}. Keep watching to become a pro fan!`;
-    } else {
-        summary = `❌ You scored ${score}/${total}. Looks like you need to watch MZRP again!`;
-    }
-
-    result.innerHTML = summary + feedback;
-    result.style.color = "white";
+function showForbiddenPopup() {
+  document.getElementById("forbiddenPopup").style.display = "block";
 }
 
-    </script>
+function closeForbiddenPopup() {
+  document.getElementById("forbiddenPopup").style.display = "none";
+  messageInput.value = ""; 
+}
+
+// Form submission
+document.getElementById("infoForm").addEventListener("submit", function(e) {
+  e.preventDefault(); 
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const place = document.getElementById("place").value;
+
+  if (!name || !email || !message || !place) {
+    alert("Please fill all fields before submitting.");
+    return;
+  }
+
+  const lowerMessage = message.toLowerCase();
+  for (let word of forbiddenWords) {
+    if (lowerMessage.includes(word)) {
+      showForbiddenPopup();
+      return;
+    }
+  }
+
+  document.getElementById("confirmation").style.display = "block";
+  document.getElementById("infoForm").reset();
+});
+
+function closeConfirmation() {
+  document.getElementById("confirmation").style.display = "none";
+}
+</script>
 
 </body>
 </html>
+
+
 
 
